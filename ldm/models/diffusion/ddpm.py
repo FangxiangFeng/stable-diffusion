@@ -327,6 +327,7 @@ class DDPM(pl.LightningModule):
         return self.p_losses(x, t, *args, **kwargs)
 
     def get_input(self, batch, k):
+        # print(batch,k)
         x = batch[k]
         if len(x.shape) == 3:
             x = x[..., None]
